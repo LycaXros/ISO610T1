@@ -15,7 +15,6 @@
     </head>
     <body>
         <%  
-            System.out.println("LLego");
         String nombre = request.getParameter("name");
         String desc = request.getParameter("desc");
         String estado = request.getParameter("estado");
@@ -23,7 +22,7 @@
         CategoriaService services = new CategoriaService();
         services.SetCategoria(new Categoria(nombre, desc, estado));
         
-        response.sendRedirect("/WebApplication1/Categorias");
+        response.sendRedirect("/WebApplication1/Productos");
             %>
     </body>
 </html>

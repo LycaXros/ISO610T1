@@ -1,9 +1,13 @@
+<%-- 
+    Document   : Nuevo
+    Created on : Jan 31, 2020, 3:31:40 PM
+    Author     : Jesus Dicent
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
 
     <head>
@@ -13,7 +17,7 @@ and open the template in the editor.
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Nueva Categoria</title>
+        <title>Nuevo Producto</title>
 
         <!-- Bootstrap core CSS -->
         <link href="/WebApplication1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -44,28 +48,32 @@ and open the template in the editor.
                 <div class="container-fluid">
                     <br />
                     <div class="row">
-                        <h1>Nueva Categoria</h1>
+                        <h1>Nuevo Producto</h1>
                         <br />
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <form method="post" action="/WebApplication1/Manage/AddCategoria.jsp">
-
+                            <form method="post" action="/WebApplication1/Manage/AddProducto.jsp">
+                                <div class="form-group">
+                                    <label for="categoria">Categoria: </label>
+                                    <select id="categoria" name="categoriaID">
+                                        <c:forEach items="${CategoriaSelect.entrySet()}" var="cs">
+                                            <option value="${cs.getKey()}">${cs.getValue()}</option>
+                                        </c:forEach>
+                                    </select>
+                                </div>
                                 <div class="form-group">
                                     <label for="nombre">Nombre: </label>
-                                    <input type="text" class="form-control" id="nombre" placeholder="Introduzca el Nombre de la Categoria" name="name">
+                                    <input type="text" class="form-control" id="nombre" placeholder="Introduzca el Nombre del producto" name="name">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="descT">Descripcion: </label>
-                                    <input type="text" class="form-control" id="descT" placeholder="Introduzca la descripcion de la Categoria" name="desc">
+                                    <label for="pV">Precio Venta: </label>
+                                    <input type="number" class="form-control" id="pV" placeholder="Introduzca el precio de venta" name="precioVenta">
                                 </div>
                                 <div class="form-group">
-                                    <label for="state">Estado:</label>
-                                    <select id="state" name="estado">
-                                        <option value="Activo">Activo</option>
-                                        <option value="Inactivo">Inactivo</option>
-                                    </select>
+                                    <label for="st">Stock: </label>
+                                    <input type="number" class="form-control" id="st" placeholder="Introduzca el Stock" name="stock">
                                 </div>
                                 <input type="submit" class="btn btn-primary" value="Submit"/>
                                 <input type="reset" value="Limpiar" class="btn btn-danger" />

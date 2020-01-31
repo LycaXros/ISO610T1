@@ -11,22 +11,25 @@ package mvc.model;
  */
 public class Producto {
 
+    private int _rowIndex;
     private int _idProducto;
     private int _idCategoria;
     private String _nombre;
-    private String _precioVenta;
+    private double _precioVenta;
     private int _stock;
 
-    public Producto(int idProducto, int idCategoria, String nombre, String precioVenta, int stock) {
+    public Producto(int idProducto,int rowIndex, int idCategoria, String nombre, double precioVenta, int stock) {
         this._idProducto = idProducto;
         this._idCategoria = idCategoria;
         this._nombre = nombre;
         this._precioVenta = precioVenta;
         this._stock = stock;
+        this._rowIndex = rowIndex;
     }
     
-    public Producto( int idCategoria, String nombre, String precioVenta, int stock) {
+    public Producto( int idCategoria, String nombre, double precioVenta, int stock) {
         this._idProducto = 0;
+        this._rowIndex = 0;
         this._idCategoria = idCategoria;
         this._nombre = nombre;
         this._precioVenta = precioVenta;
@@ -57,11 +60,11 @@ public class Producto {
         this._nombre = _nombre;
     }
 
-    public String getPrecioVenta() {
+    public double getPrecioVenta() {
         return _precioVenta;
     }
 
-    public void setPrecioVenta(String _precioVenta) {
+    public void setPrecioVenta(double _precioVenta) {
         this._precioVenta = _precioVenta;
     }
 
@@ -73,6 +76,9 @@ public class Producto {
         this._stock = _stock;
     }
 
+    public int getRowIndex() {
+        return _rowIndex;
+    }
     
     
 }

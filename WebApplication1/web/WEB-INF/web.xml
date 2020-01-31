@@ -8,6 +8,14 @@
         <servlet-name>CategoriaDelete</servlet-name>
         <servlet-class>mvc.controller.Categorias.CategoriaDelete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductosListar</servlet-name>
+        <servlet-class>mvc.controller.Productos.ProductosListar</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductoNuevo</servlet-name>
+        <servlet-class>mvc.controller.Productos.ProductoNuevo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CategoriaEdit</servlet-name>
         <url-pattern>/Categoria/Edit</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>CategoriaDelete</servlet-name>
         <url-pattern>/Categoria/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductosListar</servlet-name>
+        <url-pattern>/Productos</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductoNuevo</servlet-name>
+        <url-pattern>/Producto/Nuevo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
